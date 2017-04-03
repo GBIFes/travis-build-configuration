@@ -6,12 +6,12 @@
   <servers>
             
     <server>
-      <id>uk-nbn-releases</id>
+      <id>gbif-spain-releases</id>
       <username>${env.TRAVIS_DEPLOY_USERNAME}</username>
       <password>${env.TRAVIS_DEPLOY_PASSWORD}</password>
     </server>
     <server>
-      <id>uk-nbn-snapshots</id>
+      <id>gbif-spain-snapshots</id>
       <username>${env.TRAVIS_DEPLOY_USERNAME}</username>
       <password>${env.TRAVIS_DEPLOY_PASSWORD}</password>
     </server>
