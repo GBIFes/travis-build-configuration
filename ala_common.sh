@@ -8,13 +8,13 @@ export ALA_MAVEN_REPO_URL="http://repository.gbif.org/content/repositories"
 
 # we do not need this, if a custom <id> is NOT set (NOT used), and therefore NOT passed to maven deploy:deploy-file mojo in repositoryID
 # maven will look for the "default" <id>remote-repository</id> in ~/.m2/settings.xml
-export ALA_MAVEN_REPO_ID="uk-nbn-snapshots"
+export ALA_MAVEN_REPO_ID="gbif-spain-snapshots"
 
 # default groupId for ALA projects
-export ALA_MAVEN_GROUP_ID="uk.org.nbn"
+export ALA_MAVEN_GROUP_ID="es.org.gbif"
 
 # default to SNAPSHOT maven repo
-MAVEN_REPO="uk-nbn-snapshots";
+MAVEN_REPO="gbif-spain-snapshots";
 
 function ala_travis_grails_setup_env {
     rm -rf ~/.sdkman
@@ -28,7 +28,7 @@ function ala_travis_grails_setup_env {
     sdk install grails $grails_version || true
 
     mkdir -p ~/.grails
-    wget -q -O ~/.grails/settings.groovy https://raw.githubusercontent.com/nbnuk/travis-build-configuration/master/travis_grails_settings_old.groovy
+    wget -q -O ~/.grails/settings.groovy https://raw.githubusercontent.com/GBIFes/travis-build-configuration/master/travis_grails_settings_old.groovy
 
     # check if this is a grails application OR a plugin
     # - grails plugins are storing their version number in the WhateverGrailsPlugin.groovy file
@@ -43,7 +43,7 @@ function ala_travis_grails_setup_env {
 
     echo $app_version | grep -q "\-SNAPSHOT"
     if [ "$?" = "1" ]; then
-	MAVEN_REPO="uk-nbn-releases"
+	MAVEN_REPO="gbif-spain-releases"
     fi
 
     # TODO: if we got here and we still do not MAVEN_REPO set we have a problem, report an ERROR
