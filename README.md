@@ -1,3 +1,5 @@
+**Not in use**
+
 This repo contains all the information, configuration, and scripts required/used for building [ALA](https://github.com/AtlasOfLivingAustralia) projects on [travis-ci.org](https://travis-ci.org).
 
 See the [doc/](https://github.com/AtlasOfLivingAustralia/travis-build-configuration/tree/master/doc) subdir for information.  
